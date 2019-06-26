@@ -1,3 +1,7 @@
+body {
+  font-family: 'Noto Sans HK', sans-serif;
+}
+
 .App {
   margin: 0 auto;
   width: 960px;
