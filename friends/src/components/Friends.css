@@ -1,0 +1,23 @@
+.itemsContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.friendItem {
+    width: 200px;
+    margin: 5px;
+    background-color: #8BC6B9;
+    padding: 7px;
+}
+
+.friendCRUD {
+    margin-top: 10px;
+}
+
+.friendCRUD .update {
+    background-color: #397D90;
+}
+
+.friendCRUD .delete {
+    background-color: #EF664E;
+}

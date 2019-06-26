@@ -1,10 +1,22 @@
 import React from 'react';
+import './Friends.css';
 
 function Friends(props) {
     return (
-        <div>
+        <div className="itemsContainer">
             {props.friends.map(friend => {
-                return <p>{friend.name} is my number {friend.id} friend and he is {friend.age} years old. You can reach him at {friend.email}</p>
+                return (
+                    <div className="friendItem">
+                        <div className="friendName">Name: {friend.name}</div>
+                        <div className="friendID">ID: {friend.id}</div>
+                        <div className="friendAge">Age: {friend.age}</div>
+                        <div className="friendEmail">Email: {friend.email}</div>
+                        <div className="friendCRUD">
+                            <button className="update">Update</button>
+                            <button className="delete">Delete</button>
+                        </div>
+                    </div>
+                )
             })}
         </div>
     );
