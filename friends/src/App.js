@@ -1,7 +1,9 @@
 import React from 'react';
 import axios from 'axios';
+import { Link, Route } from 'react-router-dom';
 import './App.css';
 import Friends from './components/Friends';
+import New from './components/New';
 
 class App extends React.Component {
   state = {
@@ -27,7 +29,13 @@ class App extends React.Component {
         <h1>
           Welcome my Friends
         </h1>
-        <Friends friends={this.state.friends} />
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/new">Add a friend</Link>
+        </nav>
+
+        <Route path="/" exact render={(props) => <Friends {...props} friends={this.state.friends} />} />
+				<Route path="/new" exact render={(props) => <New {...props} />} />
       </div>
     );
   };

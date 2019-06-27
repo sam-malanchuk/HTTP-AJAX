@@ -15,7 +15,7 @@ function Friends(props) {
                     <div className="friendItem" key={friend.id}>
                        <div className="friendContent">
                             <div className="friendName">{friend.name}</div>
-                            <div className="friendID">ID: {friend.id}</div>
+                            <div className="friendID">ID #{friend.id}</div>
                             <div className="friendAge">Age: {friend.age}</div>
                             <div className="friendEmail">{friend.email}</div>
                         </div>
