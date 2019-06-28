@@ -2,7 +2,7 @@ import React from "react"
 import axios from "axios"
 import './form.css';
 
-class New extends React.Component {
+class Edit extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -10,35 +10,7 @@ class New extends React.Component {
             age: '',
             email: '',
             errorMessage: ''
-        };
-    };
-
-    handleChange = evt => {
-        this.setState({
-            [evt.target.name]: evt.target.value
-        });
-    };
-
-    createFriend = evt => {
-        evt.preventDefault();
-
-        const { name, age, email } = this.state;
-        const payload = { name, age, email };
-
-        axios.post("http://localhost:5000/friends", payload)
-            .then((response) => {
-                this.setState({
-                    errorMessage: null
-                });
-
-                this.props.updateItems(response.data);
-                this.props.history.push("/");
-            })
-            .catch((err) => {
-                this.setState({
-                    errorMessage: err.response.data.error
-                });
-            });
+        };    
     };
 
     render() {
@@ -62,4 +34,4 @@ class New extends React.Component {
     };
 };
 
-export default New;
+export default Edit;

@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Friends.css';
 
 function Friends(props) {
     function deleteItem() {
         console.log("item should delete");
     };
-    function updateItem() {
+    function updateItem(id) {
         console.log("item should update");
     };
     return (
@@ -20,8 +21,8 @@ function Friends(props) {
                             <div className="friendEmail">{friend.email}</div>
                         </div>
                         <div className="friendCRUD">
-                            <div className="update" onClick={updateItem}>Update</div>
-                            <div className="delete" onClick={deleteItem}>Delete</div>
+                            <Link to={`/edit/${friend.id}`} className="update">Update</Link>
+                            <Link to={`/edit/${friend.id}`} className="delete">Delete</Link>
                         </div>
                     </div>
                 )
