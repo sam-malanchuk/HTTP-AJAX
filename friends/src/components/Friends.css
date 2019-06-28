@@ -1,0 +1,66 @@
+.itemsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.friendItem {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 30%;
+    margin: 10px 0;
+    background-color: #f1f7ed;
+}
+
+.friendContent {
+    padding: 7px;
+    text-align: center;
+}
+
+.friendCRUD {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+}
+
+.friendName {
+    font-size: 2em;
+    text-decoration: underline;
+}
+
+.friendID, .friendAge {
+    font-size: 1.5em;
+}
+
+.friendEmail {
+    font-size: 1.2em;
+}
+
+.friendCRUD a {
+    position: relative;
+    width: 50%;
+    text-align: center;
+    padding: 15px 0;
+    cursor: pointer;
+    color: #000;
+    text-decoration: none;
+}
+
+.friendCRUD .update {
+    background-color: #397D90;
+}
+
+.friendCRUD .delete {
+    background-color: #EF664E;
+}
+
+.friendCRUD .delete:hover {
+    background-color: #D8563F;
+    font-weight: 700;
+}
+
+.friendCRUD .update:hover {
+    background-color: #2F6878;
+    font-weight: 700;
+}
