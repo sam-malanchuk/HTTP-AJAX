@@ -17,9 +17,11 @@ class Edit extends React.Component {
     componentDidMount() {
         const id = this.props.match.params.id;
 
-        axios.get(`http://localhost:5000/friends/${id}`)
+        axios.get(`http://localhost:5000/friends/`)
             .then(response => {
-                const { name, age, email } = response.data;
+                // not the cleanest code but couldn't get pulling directly from the server with the ID
+                let friendIndex = response.data.filter(friend => friend.id == id);
+                const { name, age, email } = friendIndex[0];
                 this.setState({ name, age, email });
             })
             .catch(err => {
