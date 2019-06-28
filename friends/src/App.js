@@ -31,7 +31,7 @@ class App extends React.Component {
         </h1>
         <nav>
           <Link to="/">Home</Link>
-          <Link to="/new">Add a friend</Link>
+          <Link to="/new">Add a Friend</Link>
         </nav>
 
         <Route path="/" exact render={(props) => <Friends {...props} friends={this.state.friends} />} />
