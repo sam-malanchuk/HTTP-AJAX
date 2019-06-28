@@ -16,7 +16,7 @@ function Friends(props) {
                         </div>
                         <div className="friendCRUD">
                             <Link to={`/edit/${friend.id}`} className="update">Update</Link>
-                            <Link to={`/edit/${friend.id}`} className="delete">Delete</Link>
+                            <Link to={`/delete/${friend.id}`} className="delete">Delete</Link>
                         </div>
                     </div>
                 )

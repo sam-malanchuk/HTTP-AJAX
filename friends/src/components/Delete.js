@@ -1,8 +1,10 @@
 import React from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import './form.css';
+import { runInThisContext } from "vm";
 
-class Edit extends React.Component {
+class Delete extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -30,19 +32,18 @@ class Edit extends React.Component {
             });
     };
 
-    updateFriend = evt => {
+    deleteFriend = evt => {
         evt.preventDefault();
 
-        const id = this.props.match.params.id;
-        const { name, age, email } = this.state;
-        const payload = { name, age, email };
+        const id = this.props.match.params.id
 
-        axios.put(`http://localhost:5000/friends/${id}`, payload)
+        console.log("working before entering axios");
+        axios.delete(`http://localhost:5000/friends/${id}`)
 			.then((response) => {
 				this.setState({
 					errorMessage: null
 				});
-				
+
 				this.props.updateItems(response.data);
 				this.props.history.push("/");
 			})
@@ -64,20 +65,14 @@ class Edit extends React.Component {
 
         return (
             <div className="newFriend">
-                <h1>Edit the information</h1>
-
+                <h1>Delete Friend</h1>
+                <h2>Are you sure you would like to delete {name}?</h2>
                 <p>{errorMessage}</p>
-
-                <form onSubmit={this.updateFriend}>
-                    <input type="text" name="name" value={name} onChange={this.handleChange} placeholder="Name" />
-                    <input type="number" name="age" value={age} onChange={this.handleChange} placeholder="Age" />
-                    <input type="email" name="email" value={email} onChange={this.handleChange} placeholder="Email" />
-
-                    <button type="submit">Update</button>
-                </form>
+                <button type="delete" onClick={this.deleteFriend} >Delete</button>
+                <Link to="/">Go Back</Link>
             </div>
         );
     };
 };
 
-export default Edit;
+export default Delete;
