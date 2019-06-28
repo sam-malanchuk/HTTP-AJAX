@@ -23,6 +23,10 @@ class App extends React.Component {
       });
   }
 
+  updateItems = items => {
+    this.setState({ friends: items });
+  };
+
   render() {
     return (
       <div className="App">
@@ -35,7 +39,7 @@ class App extends React.Component {
         </nav>
 
         <Route path="/" exact render={(props) => <Friends {...props} friends={this.state.friends} />} />
-				<Route path="/new" exact render={(props) => <New {...props} />} />
+				<Route path="/new" exact render={(props) => <New {...props} updateItems={this.updateItems} />} />
       </div>
     );
   };

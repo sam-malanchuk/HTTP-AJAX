@@ -1,0 +1,7 @@
+.newFriend input, .newFriend button {
+    display: block;
+    padding: 10px;
+    font-size: 1em;
+    margin: 10px 0;
+    width: 200px;
+}
