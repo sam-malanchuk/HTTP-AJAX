@@ -3,12 +3,6 @@ import { Link } from 'react-router-dom';
 import './Friends.css';
 
 function Friends(props) {
-    function deleteItem() {
-        console.log("item should delete");
-    };
-    function updateItem(id) {
-        console.log("item should update");
-    };
     return (
         <div className="itemsContainer">
             {props.friends.map(friend => {

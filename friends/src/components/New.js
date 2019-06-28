@@ -9,7 +9,7 @@ class New extends React.Component {
             name: '',
             age: '',
             email: '',
-            errorMessage: ''
+            errorMessage: null
         };
     };
 
